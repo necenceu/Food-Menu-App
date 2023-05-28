@@ -16,13 +16,13 @@ def index(request):
 
 def detail(request, item_id):
     item = Item.objects.get(pk=item_id)
-    name = 'Buy ' + item.item_name + ' - GoodTaste'
+    page_name = 'Buy ' + item.item_name + ' - GoodTaste'
     context = {
         'item':item,
-        'page_name':name,
+        'page_name':page_name,
     }
     return render(request, 'food/detail.html', context)
 
 def item(request):
-    return HttpResponse('This is a item view')
+    return HttpResponse('This is an item view')
     

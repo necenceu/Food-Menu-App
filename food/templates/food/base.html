@@ -15,8 +15,8 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-dark bg-dark">
-        <a href="{% url 'food:index' %}" class="navbar-brand">GoodTaste</a>
+    <nav class="navbar" style="background-color: #ffcd45">
+        <a href="{% url 'food:index' %}" class="navbar-brand" style="color:aliceblue">GoodTaste</a>
         <div class="navbar">
             <a class="nav-item nav-link" href="#">Create Item</a>
             <a class="nav-item nav-link" href="#">Edit Item</a>
@@ -26,6 +26,14 @@
 
     {% block body %}
     {% endblock %}
+
+
+    <footer class="footer"> 
+        <div class="text-center text-white p-3" style="background-color:#ffcd45;">
+            © 2023 Copyright:
+            <a class="text-white" href="{% url 'food:index' %}">GoodTaste</a>
+        </div>
+    </footer>
 
 </body>
 </html>
