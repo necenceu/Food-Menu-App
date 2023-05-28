@@ -1,6 +1,8 @@
 {% extends 'food/base.html' %}
     {% block body %}
-    <div class="container">
+        <div class="row">
+            <h1 style="text-align: center;">Welcome to the GoodTaste!</h1>
+        </div>
         {% for item in item_list %}
             <div class="row">
                 <div class="col-md-3 offset-md-1">
@@ -13,8 +15,8 @@
                 </div>
                 <div class="col-md-2">
                     <a class="btn btn-success" href="{% url 'food:detail' item.id %}">Details</a>
+                    <a class="btn btn-warning" href="{% url 'food:update_item' item.id %}">Edit</a>
                 </div>
             </div>
         {% endfor %}
-    </div>
     {% endblock %}

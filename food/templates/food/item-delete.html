@@ -1,0 +1,14 @@
+{% extends 'food/base.html' %}
+    {% block body %}
+        <form method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <h1 style="text-align: center;">Do you want to delete "{{ item.item_name }}" item?</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-1 mx-auto">
+                    <button type="submit" class="btn btn-success">Yes</button>
+                </div>
+            </div>
+        </form>
+    {% endblock %}
