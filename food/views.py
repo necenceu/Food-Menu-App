@@ -7,17 +7,19 @@ from .models import Item
 
 def index(request):
     item_list = Item.objects.all()
-    main_page_name = 'Good Taste'
+    page_name = 'Main - GoodTaste'
     context = {
         'item_list':item_list,
-        'main_page':main_page_name,
+        'page_name':page_name,
     }
     return render(request, 'food/index.html', context)
 
 def detail(request, item_id):
     item = Item.objects.get(pk=item_id)
+    name = 'Buy ' + item.item_name + ' - GoodTaste'
     context = {
-        'item':item
+        'item':item,
+        'page_name':name,
     }
     return render(request, 'food/detail.html', context)
 
