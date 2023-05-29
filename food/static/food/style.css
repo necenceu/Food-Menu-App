@@ -37,3 +37,13 @@ html, body{
     padding-top: 50px;
     padding-bottom: 20px;
 }
+
+.paralax-bg{
+    background-image: url('https://wallpaperaccess.com/full/717263.png');
+    min-height: 100%;
+    
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
