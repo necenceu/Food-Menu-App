@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import loader
+from django.contrib import messages
+
 from .models import Item
 from .forms import ItemForm
 
@@ -33,6 +35,8 @@ def add_item(request):
     }
 
     if form.is_valid():
+        item_name = form.cleaned_data.get('item_name')
+        messages.success(request, f'{item_name} has added to list!')
         form.save()
         return redirect('food:index')
     
@@ -49,6 +53,8 @@ def update_item(request, id):
     }
 
     if form.is_valid():
+        item_name = form.cleaned_data.get('item_name')
+        messages.success(request, f'{item_name} successfully updated!')
         form.save()
         return redirect('food:index')    
     return render(request, 'food/item-form.html', context)
@@ -57,6 +63,8 @@ def delete_item(request, id):
     item = Item.objects.get(id = id)
 
     if request.method == 'POST':
+        item_name = item.item_name
+        messages.success(request, f'{item_name} successfully deleted!')
         item.delete()
         return redirect('food:index')
     

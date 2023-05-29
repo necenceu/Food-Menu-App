@@ -21,11 +21,20 @@
             GoodTaste
         </a>
         <div class="navbar">
-            <a class="nav-item nav-link" href="{% url 'food:add_item' %}">Add Item</a>
-            <a class="nav-item nav-link" href="#">Edit Item</a>
-            <a class="nav-item nav-link" href="#">Delete Item</a>
+            <a class="nav-item nav-link" href="{% url 'food:add_item' %}">Add item</a>
+            <a class="nav-item nav-link" href="{% url 'register' %}">Sign up</a>
+            <a class="nav-item nav-link" href="#">Sign in</a>
         </div>
     </nav>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
     <div class="container">
     {% block body %}
     {% endblock %}
