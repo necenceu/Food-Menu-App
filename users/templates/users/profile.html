@@ -1,0 +1,8 @@
+{% extends 'food/base.html' %}
+    {% block body %}
+    <div>
+        <img src="{{ user.profile.image.url }}" style="height: 18rem;">   
+        <h1>{{ user.username }}</h1>
+        <h3>{{ user.profile.location }}</h3>
+    </div>
+    {% endblock %}
