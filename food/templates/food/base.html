@@ -27,6 +27,7 @@
     </nav>
 
     <div class="paralax-bg">
+        <div style="background-color:rgba(30, 33, 107, 0.35); color:aliceblue; min-height: 100vh;">
         {% if messages %}
             {% for message in messages %}
                 <div class="alert alert-{{ message.tags }}" role="alert">
@@ -38,6 +39,7 @@
         <div class="container">
         {% block body %}
         {% endblock %}
+        </div>
         </div>
     </div>
 
