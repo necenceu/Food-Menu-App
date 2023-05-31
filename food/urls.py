@@ -5,10 +5,10 @@ app_name = 'food'
 
 urlpatterns = [
     # main page of the website
-    path('', views.index, name='index'),
+    path('', views.IndexClassView.as_view(), name='index'),
 
     # detail of item
-    path('<int:item_id>/', views.detail, name='detail'),
+    path('<int:pk>/', views.FoodDetail.as_view(), name='detail'),
 
     # some item path to test fucntionality
     path('item/', views.item, name='item'),

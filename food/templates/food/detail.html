@@ -6,10 +6,10 @@
                     <img class="card" width="400px" src="{{ item.item_image_url }}">
                 </div>
                 <div class="col-md-4">
-                    <h1>{{ item.item_name }}</h1>
-                    <a3>{{ item.item_desc }}</a3><br>
-                    <h3>Price: {{ item.item_price }}</a3><br>
-                    <a href="{% url 'food:delete_item' item.id %}" class="btn btn-danger">Delete</a>
+                    <h1>{{ object.item_name }}</h1>
+                    <a3>{{ object.item_desc }}</a3><br>
+                    <h3>Price: {{ object.item_price }}</a3><br>
+                    <a href="{% url 'food:delete_item' object.id %}" class="btn btn-danger">Delete</a>
                 </div>
             </div>
     {% endblock %}
